@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Account - Meet-Up Event Planner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Meet-Up Event Planner</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>New Account</li>
+          <li><a href="new-event.html">New Event</a></li>
+          <li><a href="show-event.html">Show Event</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>New Account</h2>
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Basic Info</legend>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password">
+          </fieldset>
+          <fieldset>
+            <legend>Additional Info</legend>
+            <label for="birthday">Birthday</label>
+            <input id="birthday" type="date">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" name="phone">
+          </fieldset>
+          <button type="submit">Create account</button>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
