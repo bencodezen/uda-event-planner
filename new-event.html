@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Event - Meet-Up Event Planner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Meet-Up Event Planner</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="new-account.html">New Account</a></li>
+          <li><a href="new-event.html">New Event</a></li>
+          <li><a href="show-event.html">Show Event</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>New Event</h2>
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Basic Info</legend>
+            <label for="event-name">Event Name</label>
+            <input id="event-name" type="text">
+            <label for="event-type">Event Type</label>
+            <select id="event-type">
+              <option>- Select an Event Type -</option>
+              <option value="birthday">Birthday</option>
+              <option value="wedding">Wedding</option>
+              <option value="party">Party</option>
+              <option value="anniversary">Anniversary</option>
+              <option value="conference">Conference</option>
+            </select>
+            <label for="event-host">Event Host</label>
+            <input id="event-host" type="text">
+          </fieldset>
+          <fieldset>
+            <legend>Logistics</legend>
+            <fieldset>
+              <legend>Location</legend>
+              <input id="location-in-person" name="location-type" type="radio" >
+              <label for="location-type">In-Person</label>
+              <input id="location-online" name="location-type" type="radio" >
+              <label for="location-type">Online</label>
+              <label for="event-address-1">Street Address 1</label>
+              <input id="event-address-1" type="text">
+              <label for="event-address-2">Street Address 2</label>
+              <input id="event-address-2" type="text">
+              <label for="event-city">City</label>
+              <input id="city" type="text">
+              <label for="event-state">State</label>
+              <select id="event-state">
+                <option>- Select a State -</option>
+              </select>
+              <label for="event-zip">Zip Code</label>
+              <input id="event-zip" type="text">
+            </fieldset>
+            <label for="event-start-date">Starts on</label>
+            <input id="event-start-date" type="date">
+            <label for="event-start-time">at</label>
+            <input id="event-start-time" type="time">
+            <label for="event-end-date">Ends on</label>
+            <input id="event-end-date" type="date">
+            <label for="event-end-time">at</label>
+            <input id="event-end-time" type="time">
+            <label for="event-guests">Who do you want to invite?</label>
+            <textarea id="event-guests" placeholder="Comma or new line separated email list please!"></textarea>
+          </fieldset>
+          <fieldset>
+            <legend>Optional Message</legend>
+            <label for="event-message">Optional Message to Guests</label>
+            <textarea id="event-message"></textarea>
+          </fieldset>
+          <button type="submit">Create your event!</button>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
