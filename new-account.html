@@ -25,18 +25,18 @@
           <fieldset>
             <legend>Basic Info</legend>
             <label for="name">Name</label>
-            <input id="name" type="text" name="name">
+            <input id="name" type="text" name="name" minlength="4" autocomplete="name" autofocus="true" required>
             <label for="email">Email</label>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" minlength="7" autocomplete="email" required>
             <label for="password">Password</label>
-            <input id="password" type="password" name="password">
+            <input id="password" type="password" name="password" minlength="8" maxlength="50" autocomplete="new-password" required>
           </fieldset>
           <fieldset>
             <legend>Additional Info</legend>
             <label for="birthday">Birthday</label>
-            <input id="birthday" type="date">
+            <input id="birthday" type="date" autocomplete="bday">
             <label for="phone">Phone Number</label>
-            <input id="phone" type="tel" name="phone">
+            <input id="phone" type="tel" name="phone" minlength="10" autocomplete="tel">
           </fieldset>
           <button type="submit">Create account</button>
         </form>
