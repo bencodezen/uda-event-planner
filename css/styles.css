@@ -79,3 +79,9 @@ button[type=submit] {
   background: #53777a;
   color: #fff;
   font-size: 1.1em; }
+
+button[disabled] {
+  background-color: grey; }
+
+#validation {
+  display: none; }

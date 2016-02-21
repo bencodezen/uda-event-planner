@@ -35,6 +35,13 @@
             <div class="flex-rows">
               <label for="password">Password</label>
               <input id="password" type="password" name="password" minlength="8" maxlength="50" autocomplete="new-password" required>
+              <div class="validation" id="validation">
+                <ul>
+                  <li id="req-length">Minimum length 8 characters</li>
+                  <li id="req-upcase">At least one uppercase letter</li>
+                  <li id="req-number">At least one number</li>
+                </ul>
+              </div>
             </div>
           </fieldset>
           <fieldset>
@@ -48,9 +55,11 @@
               <input id="phone" type="tel" name="phone" minlength="10" autocomplete="tel">
             </div>
           </fieldset>
-          <button type="submit">Create account</button>
+          <button id="submit" type="submit" disabled>Create account</button>
         </form>
       </article>
     </main>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -119,4 +119,16 @@ button {
     color: $white;
     font-size: 1.1em;
   }
+
+  &[disabled] {
+    background-color: grey;
+  }
+}
+
+
+// Validation
+// ============================================================================
+
+#validation {
+  display: none;
 }
