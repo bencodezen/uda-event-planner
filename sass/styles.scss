@@ -59,6 +59,15 @@ main {
   margin-bottom: 10px;
 }
 
+.flex-cols {
+  display: flex;
+  margin-bottom: 10px;
+
+  > * {
+    flex: 1;
+  }
+}
+
 
 // Navigation
 // ============================================================================
@@ -110,6 +119,11 @@ label {
   font-size: 0.9em;
 }
 
+textarea {
+  height: 60px;
+  resize: none;
+}
+
 button {
   &[type=submit] {
     width: 100%;
@@ -123,6 +137,10 @@ button {
   &[disabled] {
     background-color: grey;
   }
+}
+
+.loc-online {
+  display: none;
 }
 
 

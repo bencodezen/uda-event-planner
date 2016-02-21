@@ -8,12 +8,12 @@
   </head>
   <body>
     <header>
-      <h1>Meet-Up Event Planner</h1>
+      <h1 class="page-title">Meet-Up Event Planner</h1>
       <nav>
-        <ul>
+        <ul class="nav-items">
           <li><a href="index.html">Home</a></li>
-          <li><a href="new-account.html">New Account</a></li>
-          <li><a href="new-event.html">New Event</a></li>
+          <li><a href="#">New Account</a></li>
+          <li><a class="current" href="new-event.html">New Event</a></li>
           <li><a href="show-event.html">Show Event</a></li>
         </ul>
       </nav>
@@ -24,60 +24,101 @@
         <form method="post" action="#">
           <fieldset>
             <legend>Basic Info</legend>
-            <label for="event-name">Event Name</label>
-            <input id="event-name" type="text">
-            <label for="event-type">Event Type</label>
-            <select id="event-type">
-              <option>- Select an Event Type -</option>
-              <option value="birthday">Birthday</option>
-              <option value="wedding">Wedding</option>
-              <option value="party">Party</option>
-              <option value="anniversary">Anniversary</option>
-              <option value="conference">Conference</option>
-            </select>
-            <label for="event-host">Event Host</label>
-            <input id="event-host" type="text">
+            <div class="flex-rows">
+              <label for="event-name">Event Name</label>
+              <input id="event-name" type="text" minlength="2" required>
+            </div>
+            <div class="flex-rows">
+              <label for="event-type">Event Type</label>
+              <select id="event-type" required>
+                <option value="">- Select an Event Type -</option>
+                <option value="birthday">Birthday</option>
+                <option value="wedding">Wedding</option>
+                <option value="party">Party</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="conference">Conference</option>
+              </select>
+            </div>
+            <div class="flex-rows">
+              <label for="event-host">Event Host</label>
+              <input id="event-host" type="text" minlength="2" required>
+            </div>
           </fieldset>
           <fieldset>
             <legend>Logistics</legend>
             <fieldset>
               <legend>Location</legend>
-              <input id="location-in-person" name="location-type" type="radio" >
-              <label for="location-type">In-Person</label>
-              <input id="location-online" name="location-type" type="radio" >
-              <label for="location-type">Online</label>
-              <label for="event-address-1">Street Address 1</label>
-              <input id="event-address-1" type="text">
-              <label for="event-address-2">Street Address 2</label>
-              <input id="event-address-2" type="text">
-              <label for="event-city">City</label>
-              <input id="city" type="text">
-              <label for="event-state">State</label>
-              <select id="event-state">
-                <option>- Select a State -</option>
-              </select>
-              <label for="event-zip">Zip Code</label>
-              <input id="event-zip" type="text">
+              <div class="flex-cols" id="location-type">
+                <div>
+                  <input id="location-in-person" name="location-type" type="radio" checked>
+                  <label for="location-in-person">In-Person</label>
+                </div>
+                <div>
+                  <input id="location-online" name="location-type" type="radio">
+                  <label for="location-online">Online</label>
+                </div>
+              </div>
+              <div class="flex-rows loc-online">
+                <label for="url">URL</label>
+                <input id="url" type="text">
+              </div>
+              <div class="flex-rows loc-person">
+                <label for="event-address-1">Street Address 1</label>
+                <input id="event-address-1" type="text">
+              </div>
+              <div class="flex-rows loc-person">
+                <label for="event-address-2">Street Address 2</label>
+                <input id="event-address-2" type="text">
+              </div>
+              <div class="flex-rows loc-person">
+                <label for="event-city">City</label>
+                <input id="city" type="text">
+              </div>
+              <div class="flex-rows loc-person">
+                <label for="event-state">State</label>
+                <select id="event-state">
+                  <option>- Select a State -</option>
+                </select>
+              </div>
+              <div class="flex-rows loc-person">
+                <label for="event-zip">Zip Code</label>
+                <input id="event-zip" type="text">
+              </div>
             </fieldset>
-            <label for="event-start-date">Starts on</label>
-            <input id="event-start-date" type="date">
-            <label for="event-start-time">at</label>
-            <input id="event-start-time" type="time">
-            <label for="event-end-date">Ends on</label>
-            <input id="event-end-date" type="date">
-            <label for="event-end-time">at</label>
-            <input id="event-end-time" type="time">
-            <label for="event-guests">Who do you want to invite?</label>
-            <textarea id="event-guests" placeholder="Comma or new line separated email list please!"></textarea>
+            <div class="flex-rows">
+              <label for="event-start-date">Starts on</label>
+              <input id="event-start-date" type="date" required>
+            </div>
+            <div class="flex-rows">
+              <label for="event-start-time">at</label>
+              <input id="event-start-time" type="time" required>
+            </div>
+            <div class="flex-rows">
+              <label for="event-end-date">Ends on</label>
+              <input id="event-end-date" type="date">
+            </div>
+            <div class="flex-rows">
+              <label for="event-end-time">at</label>
+              <input id="event-end-time" type="time">
+            </div>
+            <div class="flex-rows">
+              <label for="event-guests">Who do you want to invite?</label>
+              <textarea id="event-guests" placeholder="Comma or new line separated email list please!"></textarea>
+            </div>
           </fieldset>
           <fieldset>
             <legend>Optional Message</legend>
-            <label for="event-message">Optional Message to Guests</label>
-            <textarea id="event-message"></textarea>
+            <div class="flex-rows">
+              <label for="event-message">Optional Message to Guests</label>
+              <textarea id="event-message"></textarea>
+            </div>
           </fieldset>
           <button type="submit">Create your event!</button>
         </form>
       </article>
     </main>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -36,4 +36,16 @@ $(function() {
       }
     });
   });
+
+  $("#location-in-person").click(function() {
+    $(".loc-online").hide();
+    $.each($(".loc-person"), function() {
+      $(this).css("display", "flex");
+    });
+  });
+
+  $("#location-online").click(function() {
+    $(".loc-person").hide();
+    $(".loc-online").css("display", "flex");
+  });
 });
