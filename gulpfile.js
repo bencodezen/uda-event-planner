@@ -50,6 +50,9 @@ gulp.task('sass', function() {
       browsers: ['last 3 versions'],
       cascade: false
     }))
+    .pipe(uglifyCSS({
+      "max-line-len": 80
+    }))
     .pipe(gulp.dest('css'));
 });
 
