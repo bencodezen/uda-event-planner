@@ -8,11 +8,11 @@
   </head>
   <body>
     <header>
-      <h1>Meet-Up Event Planner</h1>
+      <h1 class="page-title">Meet-Up Event Planner</h1>
       <nav>
-        <ul>
+        <ul class="nav-items">
           <li><a href="index.html">Home</a></li>
-          <li>New Account</li>
+          <li><a class="current" href="#">New Account</a></li>
           <li><a href="new-event.html">New Event</a></li>
           <li><a href="show-event.html">Show Event</a></li>
         </ul>
@@ -24,19 +24,29 @@
         <form method="post" action="#">
           <fieldset>
             <legend>Basic Info</legend>
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" minlength="4" autocomplete="name" autofocus="true" required>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" minlength="7" autocomplete="email" required>
-            <label for="password">Password</label>
-            <input id="password" type="password" name="password" minlength="8" maxlength="50" autocomplete="new-password" required>
+            <div class="flex-rows">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" minlength="4" autocomplete="name" autofocus="true" required>
+            </div>
+            <div class="flex-rows">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" minlength="7" autocomplete="email" required>
+            </div>
+            <div class="flex-rows">
+              <label for="password">Password</label>
+              <input id="password" type="password" name="password" minlength="8" maxlength="50" autocomplete="new-password" required>
+            </div>
           </fieldset>
           <fieldset>
             <legend>Additional Info</legend>
-            <label for="birthday">Birthday</label>
-            <input id="birthday" type="date" autocomplete="bday">
-            <label for="phone">Phone Number</label>
-            <input id="phone" type="tel" name="phone" minlength="10" autocomplete="tel">
+            <div class="flex-rows">
+              <label for="birthday">Birthday</label>
+              <input id="birthday" type="date" autocomplete="bday">
+            </div>
+            <div class="flex-rows">
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="tel" name="phone" minlength="10" autocomplete="tel">
+            </div>
           </fieldset>
           <button type="submit">Create account</button>
         </form>
