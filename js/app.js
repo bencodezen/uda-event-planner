@@ -3,6 +3,7 @@ $(function() {
   var validNumber = false;
   var validUpcase = false;
 
+  // FUNCTIONALITY: #Password validation
   $("#password").focus(function() {
     $("#validation").show();
     $("#password").keyup(function() {
@@ -31,12 +32,12 @@ $(function() {
       }
 
       if (validLength && validNumber && validUpcase) {
-        console.log("Enable submit button");
         $("#submit").prop("disabled", false);
       }
     });
   });
 
+  // FUNCTIONALITY: #Location Toggling Input
   $("#location-in-person").click(function() {
     $(".loc-online").hide();
     $.each($(".loc-person"), function() {
