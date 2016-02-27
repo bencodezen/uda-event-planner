@@ -38,13 +38,25 @@ $(function() {
   });
 
   // FUNCTIONALITY: #Date comparison for events
-  $("form").submit(function(e) {
+  function checkDates() {
     var startDate = $("#event-start-date").val();
     var endDate = $("#event-end-date").val();
 
     if (endDate < startDate) {
       $("#date-error").show();
-      e.preventDefault();
+      $("#submit").prop("disabled", true);
+    } else {
+      $("#date-error").hide();
+    }
+  }
+
+  $("#event-end-date").focusout(function() {
+    checkDates();
+  });
+
+  $("#event-start-date").focusout(function() {
+    if ($("#event-end-date").val()) {
+      checkDates();
     }
   });
 
