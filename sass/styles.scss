@@ -36,6 +36,12 @@ body {
   color: $black;
 }
 
+.error {
+  display: none;
+  font-size: 0.8em;
+  color: $red;
+}
+
 
 // Header
 // ============================================================================

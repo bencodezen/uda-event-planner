@@ -37,6 +37,17 @@ $(function() {
     });
   });
 
+  // FUNCTIONALITY: #Date comparison for events
+  $("form").submit(function(e) {
+    var startDate = $("#event-start-date").val();
+    var endDate = $("#event-end-date").val();
+
+    if (endDate < startDate) {
+      $("#date-error").show();
+      e.preventDefault();
+    }
+  });
+
   // FUNCTIONALITY: #Location Toggling Input
   $("#location-in-person").click(function() {
     $(".loc-online").hide();
