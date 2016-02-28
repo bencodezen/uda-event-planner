@@ -78,7 +78,7 @@ $(function() {
     var startDate = $("#event-start-date").val();
     var endDate = $("#event-end-date").val();
 
-    if (endDate < startDate) {
+    if (endDate <= startDate) {
       $("#date-error").show();
       $("#submit").prop("disabled", true);
     } else {
