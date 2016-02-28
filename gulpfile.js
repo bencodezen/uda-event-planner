@@ -25,13 +25,19 @@ gulp.task('serve', function() {
 
 // Generate Production Assets
 gulp.task('dist', function() {
-  // Prepare CSS for Production
-  gulp.src('dist/css/**/*.css')
+  // Prepare HTML
+  gulp.src('src/**/*.html')
+    .pipe(gulp.dest('./dist/'));
+  // Prepare CSS
+  gulp.src('src/css/**/*.css')
     .pipe(uglifyCSS({
       "max-line-len": 80
     }))
-    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/css'));
+  // Prepare JS
+  gulp.src('src/js/**/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // Lint Task
