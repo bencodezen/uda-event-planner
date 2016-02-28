@@ -13,12 +13,12 @@ var browserSync = require('browser-sync').create();
 
 // Serve
 gulp.task('serve', function() {
-  gulp.watch(["*.html", "css/**/*.css", "js/**/*.js"]).on('change', browserSync.reload);
+  gulp.watch(["**/*.html", "css/**/*.css", "js/**/*.js"]).on('change', browserSync.reload);
   gulp.watch('sass/**/*.scss', ['sass']);
 
   browserSync.init({
     server: {
-        baseDir: "./"
+        baseDir: "./src/"
     }
   });
 });
@@ -26,7 +26,7 @@ gulp.task('serve', function() {
 // Generate Production Assets
 gulp.task('dist', function() {
   // Prepare CSS for Production
-  gulp.src('css/**/*.css')
+  gulp.src('dist/css/**/*.css')
     .pipe(uglifyCSS({
       "max-line-len": 80
     }))
@@ -43,7 +43,7 @@ gulp.task('lint', function() {
 
 // Compile Sass and Autoprefix Styles
 gulp.task('sass', function() {
-  return gulp.src('sass/**/*.scss')
+  return gulp.src('src/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('css'))
     .pipe(autoprefixer({
@@ -58,7 +58,7 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-  return gulp.src('js/*.js')
+  return gulp.src('src/js/*.js')
     .pipe(gulp.dest('dist'))
     .pipe(rename('all.min.js'))
     .pipe(uglify())
@@ -67,8 +67,8 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('js/*.js', ['lint', 'scripts']);
-  gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch('src/js/*.js', ['lint', 'scripts']);
+  gulp.watch('src/sass/**/*.scss', ['sass']);
 });
 
 // Default Task
