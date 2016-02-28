@@ -31,6 +31,13 @@
             <div class="flex-rows">
               <label for="email">Email</label>
               <input id="email" type="email" name="email" minlength="7" autocomplete="email" required>
+              <div class="validation" id="email-validation">
+                <ul>
+                  <li id="req-username">Contains email username</li>
+                  <li id="req-at">Includes @ character</li>
+                  <li id="req-domain">Contains a domain name</li>
+                </ul>
+              </div>
             </div>
             <div class="flex-rows">
               <label for="password">Password</label>

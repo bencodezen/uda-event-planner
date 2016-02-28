@@ -44,8 +44,33 @@ $(function() {
   });
 
   // FUNCTIONALITY: #Email Validation
-  $("#email").focusout(function() {
-    var userInput = $(this).val();
+  $("#email").focus(function() {
+    $(this).keyup(function() {
+      var userInput = $(this).val();
+      var atIndex = userInput.indexOf("@");
+      var periodIndex = userInput.indexOf(".");
+      var reqEmailUsername = $("#req-username");
+      var reqEmailAt = $("#req-at");
+      var reqEmailDomain = $("#req-domain");
+
+      if (atIndex == 0 || userInput == "") {
+        reqEmailUsername.css("color", "red");
+      } else {
+        reqEmailUsername.css("color", "green");
+      }
+
+      if (atIndex > -1) {
+        reqEmailAt.css("color", "green");
+      } else {
+        reqEmailAt.css("color", "red");
+      }
+
+      if ((periodIndex > atIndex + 1) && (userInput.length > periodIndex + 2)) {
+        reqEmailDomain.css("color", "green");
+      } else {
+        reqEmailDomain.css("color", "red");
+      }
+    });
   });
 
   // FUNCTIONALITY: #Date comparison for events
