@@ -30,14 +30,14 @@
             </div>
             <div class="flex-rows">
               <label for="event-type">Event Type</label>
-              <select id="event-type" required>
-                <option value="">- Select an Event Type -</option>
-                <option value="birthday">Birthday</option>
-                <option value="wedding">Wedding</option>
-                <option value="party">Party</option>
-                <option value="anniversary">Anniversary</option>
-                <option value="conference">Conference</option>
-              </select>
+              <input list="event-type" name="eventTypes" required>
+              <datalist id="event-type">
+                <option value="Birthday">
+                <option value="Wedding">
+                <option value="Party">
+                <option value="Anniversary">
+                <option value="Conference">
+              </datalist>
             </div>
             <div class="flex-rows">
               <label for="event-host">Event Host</label>
