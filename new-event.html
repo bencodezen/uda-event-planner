@@ -64,7 +64,7 @@
               </div>
               <div class="flex-rows loc-person">
                 <label for="event-address-1">Street Address 1</label>
-                <input id="event-address-1" type="text" autocomplete="address-line1">
+                <input id="event-address-1" type="text" autocomplete="address-line1" required>
               </div>
               <div class="flex-rows loc-person">
                 <label for="event-address-2">Street Address 2</label>
@@ -72,12 +72,12 @@
               </div>
               <div class="flex-rows loc-person">
                 <label for="event-city">City</label>
-                <input id="city" type="text">
+                <input id="city" type="text" required>
               </div>
               <div class="flex-rows loc-person">
                 <label for="event-state">State</label>
-                <select id="event-state">
-                  <option>- Select a State -</option>
+                <select id="event-state" required>
+                  <option value="">- Select a State -</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -147,7 +147,7 @@
             </div>
             <div class="flex-rows">
               <label for="event-guests">Who do you want to invite?</label>
-              <textarea id="event-guests" placeholder="Comma or new line separated email list please!"></textarea>
+              <textarea id="event-guests" placeholder="Comma or new line separated email list please!" required></textarea>
             </div>
           </fieldset>
           <fieldset>

@@ -101,11 +101,17 @@ $(function() {
     $(".loc-online").hide();
     $.each($(".loc-person"), function() {
       $(this).css("display", "flex");
+      $(this).children('input').prop("required", "true");
+      $("#event-address-2").removeAttr("required");
+      $(".loc-online input").removeAttr("required");
     });
   });
 
   $("#location-online").click(function() {
     $(".loc-person").hide();
+    $(".loc-person input").removeAttr("required");
+    $(".loc-person select").removeAttr("required");
     $(".loc-online").css("display", "flex");
+    $(".loc-online input").prop("required", "true");
   });
 });
