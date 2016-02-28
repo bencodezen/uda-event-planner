@@ -5,29 +5,35 @@ $(function() {
 
   // FUNCTIONALITY: #Password validation
   $("#password").focus(function() {
-    $("#validation").show();
-    $("#password").keyup(function() {
-      if ($("#password").val().length >= 8) {
-        $("#req-length").css("color", "green");
+    var reqPwLength = $("#req-length");
+    var reqPwNumber = $("#req-number");
+    var reqPwUpcase = $("#req-upcase");
+
+    $("#pw-validation").show();
+    $(this).keyup(function() {
+      var pwValue = $("#password").val();
+
+      if (pwValue.length >= 8) {
+        reqPwLength.css("color", "green");
         validLength = true;
       } else {
-        $("#req-length").css("color", "red");
+        reqPwLength.css("color", "red");
         validLength = false;
       }
 
-      if ($("#password").val().match(/\d+/g) !== null) {
-        $("#req-number").css("color", "green");
+      if (pwValue.match(/\d+/g) !== null) {
+        reqPwNumber.css("color", "green");
         validNumber = true;
       } else {
-        $("#req-number").css("color", "red");
+        reqPwNumber.css("color", "red");
         validNumber = false;
       }
 
-      if ($("#password").val().match(/[A-Z]/g) !== null) {
-        $("#req-upcase").css("color", "green");
+      if (pwValue.match(/[A-Z]/g) !== null) {
+        reqPwUpcase.css("color", "green");
         validUpcase = true;
       } else {
-        $("#req-upcase").css("color", "red");
+        reqPwUpcase.css("color", "red");
         validUpcase = false;
       }
 
@@ -35,6 +41,11 @@ $(function() {
         $("#submit").prop("disabled", false);
       }
     });
+  });
+
+  // FUNCTIONALITY: #Email Validation
+  $("#email").focusout(function() {
+    var userInput = $(this).val();
   });
 
   // FUNCTIONALITY: #Date comparison for events
